@@ -135,10 +135,10 @@ def feature_importance(model: SklearnModel,
     original_model = original_model_rmse(model, X, y, n_k_fold_splits)
     null_distribution = null_rmse_distribution(model, X, y, variable, n_k_fold_splits, n_permutations)
 
-    plt.hist(null_distribution, label="Null Distribution")
-    plt.hist(original_model, label="Original Model")
-    plt.title("RMSE of full model against null distribution for variable {}".format(variable))
-    plt.xlabel("RMSE")
-    plt.ylabel("Density")
+    # plt.hist(null_distribution, label="Null Distribution")
+    # plt.hist(original_model, label="Original Model")
+    # plt.title("RMSE of full model against null distribution for variable {}".format(variable))
+    # plt.xlabel("RMSE")
+    # plt.ylabel("Density")
 
     return original_model, null_distribution
