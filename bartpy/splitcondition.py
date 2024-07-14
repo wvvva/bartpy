@@ -58,6 +58,7 @@ class CombinedCondition(object):
 
     def __init__(self, variables: List[int], conditions: List[SplitCondition]):
         self.variables = {v: CombinedVariableCondition(v, -np.inf, np.inf) for v in variables}
+        self.variablesnc = variables
         self.conditions = conditions
         for condition in conditions:
             self.variables[condition.splitting_variable] = self.variables[condition.splitting_variable].add_condition(condition)
